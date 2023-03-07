@@ -24,6 +24,12 @@ Route::controller(AdminController::class)->group(function (){
     Route::get('/about/logout','destroy')->name('admin.logout');
 });
 
+//Profile
+Route::controller(AdminController::class)->group(function (){
+    Route::get('/about/logout','destroy')->name('admin.logout');
+    Route::get('/about/profile','Profile')->name('admin.profile');
+});
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
