@@ -22,7 +22,7 @@ class AdminController extends Controller
         );
 
         return redirect('/login')->with($notification);
-        
+
     } //END METHOD
     public function Profile(){
         $id = Auth::user()->id; //كتابة بيانات المستخدم تحت الصورة لما يسجل دخول
@@ -55,7 +55,7 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'Admin Profile Updated Successfully', 
-            'alert-type' => 'success'
+            'alert-type' => 'info'
         );
 
         return redirect()->route('admin.profile')->with($notification);
