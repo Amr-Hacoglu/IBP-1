@@ -16,7 +16,13 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        $notification = array(
+            'message' => 'User Logout Successfully', 
+            'alert-type' => 'success'
+        );
+
+        return redirect('/login')->with($notification);
+        
     } //END METHOD
     public function Profile(){
         $id = Auth::user()->id; //كتابة بيانات المستخدم تحت الصورة لما يسجل دخول
@@ -49,7 +55,7 @@ class AdminController extends Controller
 
         $notification = array(
             'message' => 'Admin Profile Updated Successfully', 
-            'alert-type' => 'info'
+            'alert-type' => 'success'
         );
 
         return redirect()->route('admin.profile')->with($notification);
