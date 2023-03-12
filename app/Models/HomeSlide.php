@@ -18,5 +18,5 @@ class HomeSlide extends Model
     //     'video_url',
     // ];
 
-
+    
 }
